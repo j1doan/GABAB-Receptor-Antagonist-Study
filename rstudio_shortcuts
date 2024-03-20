@@ -1,0 +1,9 @@
+Insert the <- assignment operator: Option + - (Mac) or Alt + - (Linux/Windows)
+
+Insert the pipe operator %>%: Type Crtl + Shift + M
+
+Run current line of code: Command + Enter (Mac) or Control + Enter (Linux/Windows)
+
+Comment/uncomment lines: Command + Shift + C (Mac) or Control + Shift + C (Linux/Windows)
+
+Search command history: Command + [up arrow] (Mac) or Control + [up arrow] (Linux/Windows)
