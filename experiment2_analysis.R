@@ -53,5 +53,22 @@ male_average <- mean(male_data$PercentRatio, na.rm = TRUE)
 male_stdev <- sd(male_data$PercentRatio)
 View(male_data)
 
-# 2 tailed t-test
+# 2-tailed t-test
 ttest <- twotail_ttest <- t.test(female$PercentRatio, male$PercentRatio)
+
+# Create a data frame for plotting
+plot_data <- data.frame(
+  Gender = c("Female", "Male"),
+  Mean_PercentRatio = c(female_average, male_average),
+  SD_PercentRatio = c(female_stdev, male_stdev)
+)
+
+# Create the bar plot
+ggplot(plot_data, aes(x = Gender, y = Mean_PercentRatio, fill = Gender)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_errorbar(aes(ymin = Mean_PercentRatio - SD_PercentRatio,
+                    ymax = Mean_PercentRatio + SD_PercentRatio),
+                width = 0.2, position = position_dodge(width = 0.9)) +
+  labs(title = "Girk2 : GAPDH Expression Ratio by Gender",
+       x = "Gender", y = "Percent Ratio") +
+  theme_minimal()
